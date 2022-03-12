@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        PICKmeEAT
+    </title>
+</head>
+<body style = "background-color: #808080;  ">
+    <h1>
+        No idea where to eat? 
+    </h1>
+
+
+    <h2>
+        Where is your location?
+    </h2>
+    <button onclick="getLocation()">Locked Me</button>
+    <script>
+        const x = document.getElementById("demo");
+        
+        function getLocation() {
+          try {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } catch {
+            x.innerHTML = err;
+          }
+        }
+        
+        function showPosition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+        }
+    </script>
+
+
+    
+    <h3>
+        How far would you like to travel? 
+    </h3>
+
+    <div class = "slidecontainer">
+        <input type = "range" min="3" max="15" value = "5" class = "slider" id=""myRange">
+    </div>
+
+
+
+
+    <h4>
+        Any cuisine preference?
+    </h4>
+    <div class = "dropdown">
+        <button class = "dropbtn">Preference</button>
+        <div class = "dropdown-content">
+            <a href = "#">Japanese</a>
+            <a href = "#">Korean</a>
+            <a href = "#">Mexican</a>
+            <a href = "#">Italian</a>
+            <a href = "#">Chinese</a>
+        </div>
+    </div>
+
+
+
+
+    <h5>
+        What is your budget?
+    </h5>
+    <button>
+        $
+    </button>
+    <button>
+        $$
+    </button>
+    <button>
+        $$$
+    </button><br>
+
+
+
+    <button type="button">
+        dice
+    </button>
+</body>
+</html>
